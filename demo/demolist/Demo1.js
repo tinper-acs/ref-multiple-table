@@ -1,6 +1,6 @@
 /**
  *
- * @title ref-multiple-table复杂查询表格参照
+ * @title ref-multiple-table
  * @description 复杂查询表格参照
  *
  */
