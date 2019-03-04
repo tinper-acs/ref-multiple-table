@@ -6,13 +6,13 @@
  */
 
 import React, { Component } from 'react';
-import {RefMultipleTable, RefMultipleTableWithInput, createRefMultipleTable} from 'ref-multiple-table';
+import RefMultipleTableWithInput,{RefMultipleTable, createRefMultipleTable} from 'ref-multiple-table';
 import 'ref-multiple-table/dist/index.css';
 
 import Button from 'bee-button';
 import Form from "bee-form";
 const option = {
-    title: '复杂表格参照',
+    title: '简单查询表格参照',
     hasPage:true,
     backdrop:false,
     param:{//url请求参数
@@ -27,16 +27,7 @@ const option = {
         tableBarUrl:'https://mock.yonyoucloud.com/mock/358/refInfo',//表头请求
     },
     jsonp: true,
-    checkedArray:[
-        {
-            id: "14e0220f-1a86-4861-8f74-f7134cbedb5b",
-            peocode: "li",
-            peoname: "李传忠",
-            refcode: "li",
-            refname: "李传忠",
-            refpk: "14e0220f-1a86-4861-8f74-f7134cbedb5b",
-        }
-    ],
+    value:`{"refname": "李大大","refpk": "14e0220f-1a86-4861-8f74-f7134cbedb5b"}`,
     onCancel: function (p) {
     },
     onSave: function (sels) {

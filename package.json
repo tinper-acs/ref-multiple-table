@@ -87,6 +87,6 @@
     "prop-types": "^15.6.0"
   },
   "dependencies": {
-    "ref-multiple-table": "^0.0.5"
+    "ref-multiple-table": "1.0.15-beta"
   }
 }
