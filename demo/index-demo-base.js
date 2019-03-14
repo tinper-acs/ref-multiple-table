@@ -1,9 +1,10 @@
 
-import { Con, Row, Col } from 'bee-layout';
-import { Panel } from 'bee-panel';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Button from 'bee-button';
+// import Button from 'bee-button';
+// import { Con, Row, Col } from 'bee-layout';
+// import { Panel } from 'bee-panel';
+import {Button,Panel,Con, Row, Col} from 'tinper-bee';
 import './demo.scss';
 const pkg = require('../package.json')
 

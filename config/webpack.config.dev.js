@@ -40,7 +40,7 @@ const config = webpackMerge(baseConfig, {
     //主机域名
     host: '0.0.0.0',
     compress: true,
-    port: '3000',
+    port: '3010',
     //服务于webpack生成的静态文件，用dist
     // contentBase: path.join(__dirname, '../dist'),
     //热更新
@@ -63,7 +63,19 @@ const config = webpackMerge(baseConfig, {
         target: 'http://127.0.0.1:3333/',
         changeOrigin: true
         // pathRewrite: {'^/api': ''}
-      }
+      },
+      '/wbalone': {
+        target: 'http://10.4.100.48:7777',
+        changeOrigin: true,
+      },
+      '/newref': {
+        target: 'http://10.4.100.48:7777',
+        changeOrigin: true,
+      },
+      '/pap_basedoc': {
+        target: 'http://10.4.100.48:7777',
+        changeOrigin: true,
+      },
     }
   },
   plugins: [
@@ -76,7 +88,7 @@ const config = webpackMerge(baseConfig, {
       }
     }),
     new OpenBrowserPlugin({
-      url: `http://127.0.0.1:3000`
+      url: `http://127.0.0.1:3010`
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
