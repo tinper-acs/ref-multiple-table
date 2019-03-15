@@ -29,14 +29,15 @@ class RefMultipleTableBase extends Component {
     this.TableView = props.multiple ? multiSelect(Table, Checkbox) : Table;
   }
   componentWillReceiveProps(nextProps,nextState) {
-		//严格模式下每次打开必须重置数据
+    //严格模式下每次打开必须重置数据
+    let { valueField = "refpk" } = nextProps;
 		if((nextProps.showModal && !this.props.showModal)|| !shallowequal(nextProps.checkedArray, this.props.checkedArray) ){
       //内部缓存已选择值，不通过 state 缓存，表格缓存状态自动实现
       this.checkedArray = Object.assign([],  nextProps.checkedArray || []);
       //内部缓存已选择值，缓存成 Map 便于检索
       this.checkedMap = {};
       this.checkedArray.forEach(item=>{
-        this.checkedMap[item.refpk] = item;
+        this.checkedMap[item[valueField]] = item;
       });
       this.setState({selectedDataLength:this.checkedArray.length})
     }
