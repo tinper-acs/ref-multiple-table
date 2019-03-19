@@ -264,10 +264,11 @@ class Demo1 extends Component {
 			}
 		});
 
-		let param  = {
-			'refClientPageInfo.currPageIndex': this.currPageIndex -1 , 
-			'refClientPageInfo.pageSize': pageSize
-		}
+		this.currPageIndex = 1;
+    let param = {
+        'refClientPageInfo.currPageIndex': 0,
+        'refClientPageInfo.pageSize': pageSize
+    }
 		if(Object.keys(filterInfo) > 0){
 			param.content = JSON.stringify(filterInfo);
 		}

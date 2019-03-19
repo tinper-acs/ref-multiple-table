@@ -241,9 +241,9 @@ class Table extends Component {
                 delete filterInfo[key];
             }
         });
-
+        this.currPageIndex = 1;
         let param = {
-            'refClientPageInfo.currPageIndex': this.currPageIndex - 1,
+            'refClientPageInfo.currPageIndex': 0,
             'refClientPageInfo.pageSize': pageSize
         }
         if (Object.keys(filterInfo) > 0) {
@@ -251,6 +251,7 @@ class Table extends Component {
         }
         this.pageSize = pageSize;
         this.loadTableData(param);
+       
     }
     /** end:分页*/
 
