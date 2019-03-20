@@ -254,7 +254,9 @@ class Table extends Component {
        
     }
     /** end:分页*/
-
+    miniSearchFunc = (value) =>{
+        alert(value);
+    }
     render() {
         let { showLoading } = this.state;
         let { columnsData, tableData, pageCount, pageSize, currPageIndex, fliterFormInputs, filterInfo, checkedArray, checkedMap } = this;
@@ -271,7 +273,8 @@ class Table extends Component {
             dataNumSelect: dataNumSelect,
             handlePagination: handlePagination,
             searchFilterInfo: searchFilterInfo,
-            emptyBut: true
+            emptyBut: true,
+            miniSearchFunc:this.miniSearchFunc,
         });
         console.log(columnsData,tableData)
         // return (<div style={this.props.showModal?{display:'block'}:{display:'none'}}>12</div>)

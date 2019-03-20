@@ -290,6 +290,7 @@ class Demo1 extends Component {
     let { showLoading,showModal } = this.state;
     let { columnsData, tableData,pageCount, pageSize, currPageIndex, fliterFormInputs, filterInfo, checkedArray } = this;
     let {dataNumSelect,handlePagination,searchFilterInfo} = this;
+    console.log('columnsData=',columnsData,'tableData',tableData)
     let childrenProps = Object.assign(Object.assign({}, props), {
       showModal:showModal,
       showLoading : showLoading,

@@ -266,7 +266,7 @@ class RefMultipleTableBase extends Component {
               {/*简单查询 */}
               <RefCoreSearch
                 className={`${miniSearch && tableIsSelecting ? '' : 'ref-multiple-table-tab-search-hide'}`}
-                onSearch={_this.miniSearchFunc}
+                onSearch={_this.props.miniSearchFunc}
                 language={lang}
               />
             </RefCoreTab>
