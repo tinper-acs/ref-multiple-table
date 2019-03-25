@@ -15,6 +15,7 @@ import { Modal, Pagination,Table,Checkbox} from 'tinper-bee';
 import multiSelect from 'tinper-bee/lib/multiSelect.js';
 import RefSearchPanel from './RefSearchPanel';
 import './RefMultipleTableBaseUI.less'
+import { refValParse } from '../utils'
 
 
 class RefMultipleTableBase extends Component {
@@ -28,24 +29,49 @@ class RefMultipleTableBase extends Component {
     this.checkedMap = {};
     this.TableView = props.multiple ? multiSelect(Table, Checkbox) : Table;
   }
-  componentWillReceiveProps(nextProps,nextState) {
-    //严格模式下每次打开必须重置数据
-    let { valueField = "refpk" } = nextProps;
-		if((nextProps.showModal && !this.props.showModal)|| !shallowequal(nextProps.checkedArray, this.props.checkedArray) ){
-      //内部缓存已选择值，不通过 state 缓存，表格缓存状态自动实现
-      this.checkedArray = Object.assign([],  nextProps.checkedArray || []);
-      //内部缓存已选择值，缓存成 Map 便于检索
-      this.checkedMap = {};
-      this.checkedArray.forEach(item=>{
+  shouldComponentUpdate(nextProps, nextState){
+		return !shallowequal(nextState, this.state) || nextProps.showModal !== this.props.showModal;
+	}
+	componentWillReceiveProps(nextProps) {
+		let { strictMode,valueField = "refpk"  } = nextProps;
+		//严格模式下每次打开必须重置数据
+		if( nextProps.showModal && !this.props.showModal ){ //正在打开弹窗
+			if( strictMode || !this.columnsData.length || this.currPageIndex !== 1 ) {
+				//开启严格模式 或 表头信息没有获取到，即初始化失败是必须重置
+				this.initComponent();
+			}
+			//内部缓存已选择值，不通过 state 缓存，表格缓存状态自动实现
+			this.checkedArray = Object.assign([],  nextProps.checkedArray || []);
+			//内部缓存已选择值，缓存成 Map 便于检索
+			this.checkedMap = {};
+			this.checkedArray.forEach(item=>{
         this.checkedMap[item[valueField]] = item;
       });
-      this.setState({selectedDataLength:this.checkedArray.length})
-    }
+      this.setState({selectedDataLength:this.checkedArray.length,tableIsSelecting: true})
+		}
 		
+  }
+  initComponent = () => {
+		let { value, matchData=[], valueField = "refpk" } = this.props;
+		let valueMap = refValParse(value);
+		if (this.checkedArray.length == 0 && valueMap.refpk) {
+			if (matchData.length>0) {
+				this.checkedMap = {};
+				this.checkedArray = matchData.map(item=>{
+					item.key = item[valueField];
+					item._checked = true;
+					this.checkedMap[item.key] = item;
+					return item;
+				});
+				this.setState({
+					selectedDataLength: this.checkedArray.length,
+					mustRender: Math.random()
+				})
+			}
+		};
 	}
   /**start:按钮操作 */
   handleBtnSave = () => {
-    console.log('save+this.checkedArray=', this.checkedArray)
     this.props.onSave(Object.assign([], this.checkedArray));
   }
 
