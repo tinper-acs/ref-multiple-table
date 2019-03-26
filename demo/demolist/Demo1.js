@@ -13,7 +13,7 @@ const props = {
     backdrop: true,
     disabled: false,
     multiple: true,
-    strictMode: true,
+    strictMode: false,
     miniSearch: false,
     emptyBut: true,
     param: {
@@ -77,8 +77,6 @@ class Demo1 extends Component {
         this.currPageIndex = 1;
         this.fliterFormInputs = [];
         this.filterInfo='';
-
-        const { getFieldError, getFieldProps } = this.props.form;
         let { showLoading, showModal } = this.state;
         let { columnsData, tableData, pageCount, pageSize, currPageIndex, fliterFormInputs, filterInfo, checkedArray } = this;
         let { dataNumSelect, handlePagination, searchFilterInfo } = this;

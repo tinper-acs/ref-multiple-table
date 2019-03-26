@@ -19,6 +19,13 @@ import { refValParse } from '../utils'
 
 
 class RefMultipleTableBase extends Component {
+	columnsData = []//表头数据
+	tableData = []//表格数据
+	pageCount = 1//总页数
+	pageSize = '10'//每页数据数
+	currPageIndex = 1//激活页码
+	fliterFormInputs = []
+	filterInfo = {};
   constructor(props) {
     super(props);
     this.state={
@@ -41,7 +48,7 @@ class RefMultipleTableBase extends Component {
 				this.initComponent();
 			}
 			//内部缓存已选择值，不通过 state 缓存，表格缓存状态自动实现
-			this.checkedArray = Object.assign([],  nextProps.checkedArray || []);
+			this.checkedArray = Object.assign(this.checkedArray,  nextProps.checkedArray || []);
 			//内部缓存已选择值，缓存成 Map 便于检索
 			this.checkedMap = {};
 			this.checkedArray.forEach(item=>{

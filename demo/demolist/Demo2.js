@@ -88,12 +88,13 @@ class Demo2 extends Component {
                     onCancel={this.onCancel}
                     searchFilterInfo={this.searchFilterInfo}
                     {...getFieldProps('valueField', {
-                        // initialValue:'{\"refname\":\"高级-T3\",\"refpk\":\"level5\"}',
+                        initialValue:'{\"refname\":\"人员1\",\"refpk\":\"cc791b77-bd18-49ab-b3ec-ee83cd40012a\"}',
                         rules: [{
                             message: '请输入姓名',
                             pattern: /[^{"refname":"","refpk":""}]/
                         }]
                     })}
+                    matchData={[{ "rownum_": 1, "code": "001", "name": "人员1", "mobile": "15011430230", "refcode": "001", "refpk": "cc791b77-bd18-49ab-b3ec-ee83cd40012a", "id": "cc791b77-bd18-49ab-b3ec-ee83cd40012a", "refname": "人员1", "email": "11@11.com", "key": "cc791b77-bd18-49ab-b3ec-ee83cd40012a" }]}
                 >
                     <RefMultipleTableBaseUI/>
                 </RefWithInput>
