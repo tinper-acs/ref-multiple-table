@@ -1,6 +1,6 @@
 /**
  *
- * @title 表格参照带有input
+ * @title 封装完成的RefMultipleTableWithInput
  * @description 表格参照带有input,封装完成的RefMultipleTableWithInput
  *
  */

@@ -1,6 +1,6 @@
 /**
  *
- * @title 表格参照带有input
+ * @title 表格参照带有input,RefWithInput和RefMultipleTableBaseUI组合
  * @description 表格参照带有input,RefWithInput和RefMultipleTableBaseUI组合
  *
  */
