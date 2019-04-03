@@ -38,7 +38,9 @@ class RefMultipleTableBase extends Component {
   }
   shouldComponentUpdate(nextProps, nextState){
 		// let result  = !shallowequal(nextState, this.state);
-		return !shallowequal(nextState, this.state) || nextProps.showModal !== this.props.showModal;
+		//使用state是因为mustRender不同必须重新渲染，this中的三种data不一致也必须更新
+		let dataEqual = nextProps.tableData === this.props.tableData && nextProps.columnsData === this.props.columnsData && nextProps.fliterFormInputs === this.props.fliterFormInputs
+		return !shallowequal(nextState, this.state) || !dataEqual || nextProps.showModal !== this.props.showModal;
 	}
 	componentWillReceiveProps(nextProps) {
 		let { strictMode,valueField = "refpk"  } = nextProps;
