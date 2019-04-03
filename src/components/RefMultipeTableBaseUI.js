@@ -37,8 +37,8 @@ class RefMultipleTableBase extends Component {
     this.TableView = props.multiple ? multiSelect(Table, Checkbox) : Table;
   }
   shouldComponentUpdate(nextProps, nextState){
-		// let result  = !shallowequal(nextProps, this.props);
-		return !shallowequal(nextProps, this.props) || nextProps.showModal !== this.props.showModal;
+		// let result  = !shallowequal(nextState, this.state);
+		return !shallowequal(nextState, this.state) || nextProps.showModal !== this.props.showModal;
 	}
 	componentWillReceiveProps(nextProps) {
 		let { strictMode,valueField = "refpk"  } = nextProps;
