@@ -1,8 +1,9 @@
-## ref-multiple-table 表格参照通用ui
+# 表格参照通用ui RefMultipleTable 
 
 
 ## 何时使用
-> 单选多选表格参照
+
+单选多选表格参照
 
 
 ## 如何使用
