@@ -97,7 +97,6 @@
     "bee-pagination": "^2.0.6",
     "bee-search-panel": "^2.0.14",
     "bee-table": "^2.0.11",
-    "ref-core": "^0.3.4-beta.1",
-    "ref-multiple-table": "1.0.15-beta"
+    "ref-core": "^0.3.4-beta.3"
   }
 }

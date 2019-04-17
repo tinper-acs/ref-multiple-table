@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import RefMultipleTableBaseUI from './components/RefMultipeTableBaseUI';
 import RefSearchPanel,{SearchPanelItem} from './components/RefSearchPanel';
-import RefWithInput from 'ref-core/lib/refs/refcorewithinput.js';
-import 'ref-core/lib/refs/refcorewithinput.css';
+import RefWithInput from 'ref-core/lib/refs/RefCoreWithInput';
 import { createRefModal, createRefInput } from 'ref-core/lib/utils/createApi.js';
 import RefCoreGlobal from 'ref-core/lib/refs/refcoreglobal';
 import 'ref-core/css/refcore.css';
