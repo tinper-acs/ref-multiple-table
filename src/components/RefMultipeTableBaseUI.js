@@ -13,7 +13,6 @@ import Table from 'bee-table';
 import multiSelect from "bee-table/build/lib/multiSelect.js";
 import Loading from 'bee-loading';
 import RefSearchPanel from './RefSearchPanel';
-import './RefMultipleTableBaseUI.less'
 import { refValParse } from '../utils'
 class RefMultipleTableBase extends Component {
 	columnsData = []//表头数据

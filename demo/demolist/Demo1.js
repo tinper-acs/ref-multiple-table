@@ -6,6 +6,8 @@
  */
 import React, { Component } from 'react';
 import RefMultipleTableBaseUI from '../../src/index';
+import  '../../src/index.less';
+
 import { Button, Form } from 'tinper-bee';
 const props = {
     placeholder: "自定义placeholder",
