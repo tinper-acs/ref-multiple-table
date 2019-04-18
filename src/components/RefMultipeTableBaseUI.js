@@ -279,7 +279,7 @@ class RefMultipleTableBase extends Component {
         size={size}
         onHide={this.handleBtnCancel}
       >
-        <Loading container={this} show={showLoading} />
+        <Loading container={document.getElementsByClassName('u-modal-content')[0]} show={showLoading} />
           <Modal.Header closeButton={true}>
             <Modal.Title > {title}</Modal.Title>
           </Modal.Header >
