@@ -278,12 +278,13 @@ class RefMultipleTableBase extends Component {
         backdrop={backdrop}
         size={size}
         onHide={this.handleBtnCancel}
+        autoFocus={false}
       >
-        <Loading container={document.getElementsByClassName('u-modal-content')[0]} show={showLoading} />
           <Modal.Header closeButton={true}>
             <Modal.Title > {title}</Modal.Title>
           </Modal.Header >
-          <Modal.Body>
+          <Modal.Body ref={(ref)=>this.modalRef = ref}>
+             <Loading container={this.modalRef} show={showLoading} />
             {
               //按字段查询
               fliterFormInputs.length !== 0 && !miniSearch ?
