@@ -79,9 +79,7 @@ searchPanelLocale | `Object` | {'title': '条件筛选EN','resetName': '重置En
 
 ### RefMultipleTableWithInput
 
-除了使用上述<RefMultipleTableBaseUI/>的参数（showModal不可使用）还可以使用 以下参数。下面的参数是 < RefMultipleTableWithInput/>独有。对<
-除了使用上述</>使用无效
-
+除了使用上述<RefMultipleTableBaseUI/>的参数（showModal不可使用）还可以使用以下参数。
 
 参数 | 类型 |默认值| 说明 | 必选
 ---|---|--- | --- | ---
