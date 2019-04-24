@@ -20,6 +20,7 @@ const props = {
     emptyBut: true,
     valueField: "refpk",
     displayField: "{refname}",
+    className:'ref-walsin-modal',
 }
 class Demo3 extends Component {
 

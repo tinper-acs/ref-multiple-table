@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'tinper-bee';
 import { RefMultipleTableWithInput }  from '../../src/index';
-import  '../../src/index.less';
+import  '../../src/walsin.less';
 let props = {
     placeholder: "placehholder",
     title: '复杂表格参照',
