@@ -9,14 +9,14 @@
 ## 如何使用
 
 ``` sh
-$ ynpm install ref-multiple-table@2.0.0-beta.0 --save
+$ ynpm install ref-multiple-table --save
 
 引入
 
-import RefMultipleTableBaseUI,{ SearchPanelItem }  from 'ref-multiple-table/lib/index.js'
+import RefMultipleTableBaseUI,{ SearchPanelItem }  from 'ref-multiple-table'
 
 或者
-import { RefMultipleTableWithInput } from 'ref-multiple-table/lib/index.js'
+import { RefMultipleTableWithInput } from 'ref-multiple-table'
 
 样式
 
