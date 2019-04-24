@@ -2,7 +2,7 @@
   "name": "ref-multiple-table",
   "version": "2.0.1-beta.4",
   "description": "",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear": "rimraf dist",
