@@ -113,12 +113,15 @@ matchData | `Array` | [] | 选中的节点，macthData和value配合使用，当
 theme| `String` | 'ref-red' | 参照主题，现在就两种选择'ref-red'或者'ref-blue' | 否
 onFilterChange| `function(field,value,condition)`| ()=>{} | 行内搜索回调函数 | 否
 fliterColumn | `Array` | [] | 过滤条件，为空则没有行内搜索 | 否
+
+
 ### RefMultipleTableWithInput
 
 除了使用上述<RefMultipleTableBaseUI/>的参数（showModal不可使用）还可以使用以下参数。
 
 参数 | 类型 |默认值| 说明 | 必选
 ---|---|--- | --- | ---
+className |`string`|空 | 参照class样式，作用于弹出层的样式，默认为空。className若是ref-walsin-modal，那么弹出的参照是行内过滤表格参照，否则是默认表格参照 | 否 
 wrapClassName|`string`|空 | 文本框的class样，默认为空。 | 否
 placeholder|`string`| 空 |文本框的 placeholder | 否
 style| `object`| {width:200}| 文本框的style，默认宽度200px | 否 
