@@ -4,25 +4,19 @@
 @import './components/RefMultipleTableBaseUI.less';
 @import './components/RefSearchPanel.less';
 .ref-multiple-table{
+    .u-input-group-btn{
+        line-height: 32px;
+        color: #757575;
+     }
     &.ref-core .u-modal-dialog .u-modal-body{
-        padding: 10px 0;
+        padding: 10px 16px;
         text-align: center;
     }
-   
+    .ref-tabs-panel{
+        padding:0;
+    }
     & .u-search-header{
         padding-top:0;
-    }
-    &.ref-core .u-table{
-        padding:0 16px;
-    }
-    & .u-table-tbody{
-        & tr td span{
-            display: inline-block;
-        }
-        & tr td:first-child{
-            text-align: center
-        }
-        
     }
 
 }
