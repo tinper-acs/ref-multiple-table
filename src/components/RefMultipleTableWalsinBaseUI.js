@@ -257,7 +257,7 @@ class RefMultipleTableWalsinBaseUI extends Component {
         let { className,title = '', backdrop, size = 'lg',
             showModal, lang = 'zh_CN', valueField, emptyBut = false, buttons, fliterColumn = [],
             showLoading, tableData, pageCount, currPageIndex,
-            columnsData, totalElements, theme = 'ref-red' } = this.props;
+            columnsData, totalElements, theme = 'ref-red',onFilterChange=()=>{} } = this.props;
         let { checkedArray, checkedMap } = this;
         let { selectedDataLength, tableIsSelecting } = this.state;
         let _tableData = tableData.map(item => {
@@ -326,7 +326,7 @@ class RefMultipleTableWalsinBaseUI extends Component {
                             rowKey: _this.putRowKey,
                             columnFilterAble: false,
                             showFilterMenu: true,
-                            onFilterChange:_this.props.onFilterChange,
+                            onFilterChange:onFilterChange,
                             filterDelay: 500,//输入文本多少ms触发回调函数，默认500m,
                             filterable: Boolean(fliterColumn.length),//是否开启过滤数据功,
                         }) :
