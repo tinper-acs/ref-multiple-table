@@ -65,7 +65,7 @@ size|`String`|'lg'|modal的size|否
 valueField |``string``|'refcode' |待提交的 value 的键。 | 否
 searchFilterInfo | `function(value)`| 复杂搜索的查询回调，将搜索条件带回| 否
 showLoading | `bool` | false | 是否展示loading，多用于请求中| 否
-<span style="color:red;">*</span>fliterFormInputs| `Array`| -- | 查询条件| 否
+<span style="color:red;">*</span>fliterFormInputs| `Array`| -- | 查询条件dom集合，多配合组件SearchPanelItem一起使用| 否
 <span style="color:red;">*</span>tableData | `Array` | — | 表体数据 | 否
 <span style="color:red;">*</span>columsData | `Array`| — | 表头数据 | 否
 pageCount |`number`| — |总页数 | 否
