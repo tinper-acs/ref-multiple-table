@@ -48,8 +48,7 @@ gulp.task("css_component", function() {
   gulp
     .src([
       path.join(process.cwd(), "./src/theme-red.css"),
-      path.join(process.cwd(), "./src/index.less"),
-      path.join(process.cwd(), "./src/theme-red.less")
+      path.join(process.cwd(), "./src/**/*.less"),
   ])
     .pipe(gulp.dest("./lib"));
   console.log("###### css_component done ######");
