@@ -48,6 +48,8 @@ gulp.task("css_component", function() {
   gulp
     .src([
       path.join(process.cwd(), "./src/theme-red.css"),
+      path.join(process.cwd(), "./src/index.less"),
+      path.join(process.cwd(), "./src/theme-red.less")
   ])
     .pipe(gulp.dest("./lib"));
   console.log("###### css_component done ######");
@@ -67,8 +69,8 @@ gulp.task("clean_lib2", function() {
   return shelljs.rm("-rf", getFromCwd("lib"));
 });
 
-gulp.task("lib2", ["clean_lib2","pack_lib2", "less_component",'css_component'], function() {});
+gulp.task("lib2", ["clean_lib2","pack_lib2"], function() {});
 
-gulp.task('default',['lib2']);
+gulp.task('default',['lib2',"less_component",'css_component']);
 // gulp.task('default',['theme_src']);
 
