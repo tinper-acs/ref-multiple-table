@@ -26702,7 +26702,8 @@
 }
 .ref-multiple-table.ref-core-modal .u-search-header {
   padding: 0;
-  height: 36px;
+  height: auto;
+  padding-top: 6px;
 }
 .ref-multiple-table.ref-core-modal .u-search-resident {
   padding: 0;
@@ -26712,6 +26713,7 @@
 }
 .ref-multiple-table.ref-core-modal .formItemCustomed {
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 .ref-multiple-table.ref-core-modal .formItemCustomed .u-label,
 .ref-multiple-table.ref-core-modal .formItemCustomed .u-form-control {
