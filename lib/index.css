@@ -26693,29 +26693,34 @@
 .u-panel-group .u-panel-group .u-panel-heading + .u-panel-collapse > .u-panel-body {
   border-top: 1px solid #ddd;
 }
-.ref-multiple-table .u-input-group-btn {
+.ref-multiple-table.ref-core-modal .u-input-group-btn {
   line-height: 32px;
   color: #757575;
 }
-.ref-multiple-table .u-radio-group {
-  display: block;
+.ref-multiple-table.ref-core-modal .u-radio-group {
+  display: block!important;
 }
-.ref-multiple-table .u-search-resident {
+.ref-multiple-table.ref-core-modal .u-search-header {
+  padding: 0;
+  height: 36px;
+}
+.ref-multiple-table.ref-core-modal .u-search-resident {
   padding: 0;
 }
-.ref-multiple-table .u-search .u-panel .u-panel-body {
-  padding-bottom: 0;
+.ref-multiple-table.ref-core-modal .u-search .u-panel .u-panel-body {
+  padding: 0;
 }
-.ref-multiple-table .formItemCustomed {
+.ref-multiple-table.ref-core-modal .formItemCustomed {
   padding-bottom: 10px;
 }
-.ref-multiple-table.ref-core .u-modal-dialog .u-modal-body {
+.ref-multiple-table.ref-core-modal .formItemCustomed .u-label,
+.ref-multiple-table.ref-core-modal .formItemCustomed .u-form-control {
+  font-size: 12px;
+}
+.ref-multiple-table.ref-core-modal.ref-core .u-modal-dialog .u-modal-body {
   padding: 10px 16px;
   text-align: center;
 }
-.ref-multiple-table .ref-tabs-panel {
+.ref-multiple-table.ref-core-modal .ref-tabs-panel {
   padding: 0;
-}
-.ref-multiple-table .u-search-header {
-  padding-top: 0;
 }

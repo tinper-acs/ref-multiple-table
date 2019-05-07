@@ -3,22 +3,30 @@
 @import './theme-red.less';
 @import './components/RefMultipleTableBaseUI.less';
 @import './components/RefSearchPanel.less';
-.ref-multiple-table{
+.ref-multiple-table.ref-core-modal{
     .u-input-group-btn{
         line-height: 32px;
         color: #757575;
      }
      .u-radio-group{
-         display: block;
+         display: block!important;
      }
+     & .u-search-header{
+        padding:0;
+        height: 36px;
+    }
      .u-search-resident{
          padding:0;
      }
      .u-search .u-panel .u-panel-body{
-         padding-bottom: 0;
+         padding: 0;
      }
      .formItemCustomed{
-         padding-bottom: 10px;
+        padding-bottom: 10px;
+        & .u-label,& .u-form-control{
+             font-size:12px;
+        }
+         
      }
     &.ref-core .u-modal-dialog .u-modal-body{
         padding: 10px 16px;
@@ -27,8 +35,6 @@
     .ref-tabs-panel{
         padding:0;
     }
-    & .u-search-header{
-        padding-top:0;
-    }
+    
 
 }

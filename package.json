@@ -1,6 +1,6 @@
 {
   "name": "ref-multiple-table",
-  "version": "2.0.2-beta.0",
+  "version": "2.0.2-beta.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -110,6 +110,6 @@
     "bee-radio": "^2.0.8",
     "bee-search-panel": "^2.0.14",
     "bee-table": "^2.0.11",
-    "ref-core": "^0.2.2"
+    "ref-core": "^0.2.3"
   }
 }
