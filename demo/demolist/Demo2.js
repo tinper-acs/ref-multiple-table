@@ -47,7 +47,7 @@ class Demo3 extends Component {
         let colunmsList = keyList.map((item, index) => {
             props["fliterFormInputs"].push(
                 <SearchPanelItem key={item} name={item} text={titleList[index]}>
-                    <FormControl />
+                    <FormControl  size='sm'/>
                 </SearchPanelItem>
             )
             return {
