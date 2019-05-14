@@ -9,6 +9,7 @@ import { FormControl,Button, Form } from 'tinper-bee';
 import Radio from 'bee-radio';
 import { SearchPanelItem,RefMultipleTableWithInput }  from '../../src/index';
 import  '../../src/index.less';
+// import '../tinper-bee-theme.css';
 let props = {
     placeholder: "placehholder",
     title: '复杂表格参照',
@@ -97,6 +98,7 @@ class Demo3 extends Component {
                             pattern: /[^{"refname":"","refpk":""}]/
                         }]
                     })}
+                    // theme=''
                 >
                 </RefMultipleTableWithInput>
                 <Button colors="primary" onClick={() => {
