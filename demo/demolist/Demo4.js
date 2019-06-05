@@ -1,32 +1,26 @@
 /**
  *
- * @title 基础示例2
- * @description RefMultipleTableWithInput, `multiple`多选、`fliterFormInputs`复杂搜索。
+ * @title 基础示例4
+ * @description 清空功能：不使用form表单
  *
  */
 import React, { Component } from 'react';
-import { RefMultipleTableWithInput, SearchPanelItem } from '../../src/index';
+import { RefMultipleTableWithInput } from '../../src/index';
 import '../../src/index.less';
-import { Button, Form, FormControl } from 'tinper-bee';
+import { Button } from 'tinper-bee';
+import Radio from 'bee-radio';
+import 'bee-radio/build/Radio.css';
 import request from './request';
 let options = {}
-class Demo2 extends Component {
+class Demo4 extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showLoading: false,
       showModal: false,
       matchData: [
-        {
-          "code":"005",
-          "mobile": "15011430235",
-          "name": "人员5",
-          "refpk": "5e3a85ec-5e14-4734-8b3a-1e6168426c89",
-          "refname": "人员5",
-          "email": "55@26.com"
-        }
       ],
-      value: '{"refname":"人员5-自定义","refpk":"5e3a85ec-不完整"}',
+      value:'',
     };
     this.page = {
       pageCount: 0,
@@ -35,12 +29,13 @@ class Demo2 extends Component {
     };
     this.tableData = [];
     this.columnsData = [];
-    this.fliterFormInputs = [];
 
   }
-  componentDidMount() {
-    this.loadData();
+
+  componentDidMount(){
+    this.loadData()
   }
+
   /**
    * @msg: 请求mock数据，包含表头数据和表体数据
    * @param {type} 
@@ -77,14 +72,10 @@ class Demo2 extends Component {
  */
   launchTableHeader = (data) => {
     if (!data) return;
+    let { multiple, valueField } = options;
     let keyList = data.strFieldCode || [];
     let titleList = data.strFieldName || [];
     let colunmsList = keyList.map((item, index) => {
-      this.fliterFormInputs.push(
-        <SearchPanelItem key={item} name={item} text={titleList[index]}>
-          <FormControl size={'sm'} />
-        </SearchPanelItem>
-      )
       return {
         key: item,
         dataIndex: item,
@@ -93,8 +84,26 @@ class Demo2 extends Component {
     });
     if (colunmsList.length === 0) {
       colunmsList = [{ title: "未传递表头数据", dataIndex: "nodata", key: "nodata" }];
+    } else if (!multiple) {
+      colunmsList.unshift({
+        title: " ",
+        dataIndex: "a",
+        key: "a",
+        width: 45,
+        render(text, record, index) {
+          return (
+            <Radio.RadioGroup
+              name={record[valueField]}
+              selectedValue={record._checked ? record[valueField] : null}
+            >
+              <Radio value={record[valueField]}></Radio>
+            </Radio.RadioGroup>
+          )
+        }
+      })
     }
-    this.columnsData = colunmsList;
+    this.columnsData = colunmsList
+
   }
 	/**
 	 * 处理并渲染表格数据
@@ -119,8 +128,8 @@ class Demo2 extends Component {
    * @param {type} 
    * @return: 
    */
-  searchFilterInfo = (value) => {
-    alert('搜索' + JSON.stringify(value))
+  miniSearchFunc = (value) => {
+    alert('搜索' + value)
   }
 
   /**
@@ -158,26 +167,36 @@ class Demo2 extends Component {
     this.setState({ showModal: false })
   }
 
+  /**
+   * @msg: 清空操作
+   * @param {type} 此时value不可以直接传'',因为''下只能清除一次，第二次清除时前后value都是''，不会触发更新操作，
+   * 因此通过refpk不一致来触发更新操作
+   * @return: 
+   */
+  clearFunc = () => {
+    this.setState({
+      matchData: [],
+      value: `{"refname":"","refpk":"${Math.random()}"}`,
+    })
+  }
   render() {
-    let { getFieldProps, getFieldError } = this.props.form;
-    let { showLoading, showModal, matchData, value } = this.state;
-    let { columnsData, tableData, page, fliterFormInputs } = this;
+    let { showLoading, showModal, matchData,value } = this.state;
+    let { columnsData, tableData, page } = this;
     options = {
-      miniSearch: false,
-      multiple: true,
+      miniSearch: true,
+      multiple: false,
       valueField: "refpk",
-      displayField: "{code}-大前端{name}",
-      emptyBut: true
+      displayField: "{refname}",
     }
     let childrenProps = Object.assign({}, options, {
       showModal: showModal,
       showLoading: showLoading,
       columnsData: columnsData,
       tableData: tableData,
-      fliterFormInputs: fliterFormInputs,
       ...page,
       matchData,
-      searchFilterInfo: this.searchFilterInfo,
+      value,
+      miniSearchFunc: this.miniSearchFunc,
       dataNumSelect: this.dataNumSelect,
       handlePagination: this.handlePagination,
       onSave: this.onSave,
@@ -187,23 +206,15 @@ class Demo2 extends Component {
       <div className="demoPadding">
         <RefMultipleTableWithInput
           {...childrenProps}
-          {
-          ...getFieldProps('table2', {
-            initialValue: value,
-            rules: [{
-              message: '请输入姓名',
-              pattern: /[^{"refname":"","refpk":""}|{"refpk":"","refname":""}]/
-            }]
-          })
-          }
+
         />
-        <span className='error'>
-          {getFieldError('table2')}
-        </span>
+        <Button
+          colors="primary"
+          onClick={this.clearFunc}>清空</Button>
       </div>
     )
   }
 }
 
-export default Form.createForm()(Demo2);
+export default Demo4;
 
