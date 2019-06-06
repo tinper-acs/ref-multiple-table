@@ -26,7 +26,7 @@ class Demo2 extends Component {
           "email": "55@26.com"
         }
       ],
-      value: '{"refname":"人员5-自定义","refpk":"5e3a85ec-不完整"}',
+      value: '{"refname":"人员5-自定义","refpk":"5e3a85ec-5e14-4734-8b3a-1e6168426c89"}',
     };
     this.page = {
       pageCount: 0,
