@@ -206,7 +206,7 @@ class Demo4 extends Component {
       <div className="demoPadding">
         <RefMultipleTableWithInput
           {...childrenProps}
-
+          filterUrl={'/pap_basedoc/common-ref/blobRefTreeGrid'}
         />
         <Button
           colors="primary"

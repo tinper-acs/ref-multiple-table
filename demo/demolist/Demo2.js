@@ -187,6 +187,7 @@ class Demo2 extends Component {
       <div className="demoPadding">
         <RefMultipleTableWithInput
           {...childrenProps}
+          filterUrl={'/pap_basedoc/common-ref/blobRefTreeGrid'}
           {
           ...getFieldProps('table2', {
             initialValue: value,
