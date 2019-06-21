@@ -40,6 +40,9 @@ class Demo2 extends Component {
   }
   componentDidMount() {
     this.loadData();
+    this.props.form.setFieldsValue({
+      'table2':this.state.value
+    })
   }
   /**
    * @msg: 请求mock数据，包含表头数据和表体数据
@@ -190,7 +193,7 @@ class Demo2 extends Component {
           filterUrl={'https://mock.yonyoucloud.com/mock/1264/pap_basedoc/common-ref/blobRefTreeGrid'}
           {
           ...getFieldProps('table2', {
-            initialValue: value,
+            // initialValue: value,
             rules: [{
               message: '请输入姓名',
               pattern: /[^{"refname":"","refpk":""}|{"refpk":"","refname":""}]/
