@@ -41,8 +41,25 @@ class Demo2 extends Component {
   componentDidMount() {
     this.loadData();
     this.props.form.setFieldsValue({
-      'table2':this.state.value
-    })
+      ['table2']:this.state.value
+    });
+    setTimeout(() => {
+      this.setState({
+        matchData: [
+          {
+            "code":"005",
+            "mobile": "15011430235",
+            "name": "人员7",
+            "refpk": "394bba90-ed0f-4794-a44e-fd9ce6e9257d",
+            "refname": "人员5",
+            "email": "55@26.com"
+          }
+        ]
+      })
+      this.props.form.setFieldsValue({
+        ['table2']: '{"refname":"人员7-自定义","refpk":"394bba90-ed0f-4794-a44e-fd9ce6e9257d"}',
+      });
+    }, 14000);
   }
   /**
    * @msg: 请求mock数据，包含表头数据和表体数据
