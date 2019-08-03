@@ -41,7 +41,7 @@ class RefMultipleTableBase extends Component {
 	componentWillReceiveProps(nextProps) {
 		let { strictMode,valueField = "refpk" ,matchData=[],value } = nextProps;
 		//严格模式下每次打开必须重置数据
-		if( nextProps.showModal){ //正在打开弹窗
+		if( nextProps.showModal && !this.props.showModal || !shallowequal(nextProps.matchData ,this.props.matchData) ){ //正在打开弹窗
 			// if( strictMode || !this.columnsData.length || this.currPageIndex !== 1 ) {
 			// 	//开启严格模式 或 表头信息没有获取到，即初始化失败是必须重置
 			// 	this.initComponent();
@@ -233,7 +233,7 @@ class RefMultipleTableBase extends Component {
       showModal, lang = 'zh_CN', valueField='refpk', emptyBut = false, buttons, fliterFormInputs = [],
       showLoading,tableData, pageCount, currPageIndex, 
       columnsData, totalElements,theme='ref-red',searchPanelLocale,
-      mustPaginationShow=false,tableProps={},modalProps={}} = this.props;
+      mustPaginationShow=false,tableProps={},modalProps={},searchPlaceholder='搜索'} = this.props;
     let temp = JSON.stringify(tableData)
     let _newTableData = JSON.parse(temp);
     let {checkedArray,checkedMap} = this;
@@ -292,6 +292,7 @@ class RefMultipleTableBase extends Component {
 								onSearch={_this.props.onSearchClick}
 								onChange={_this.props.miniSearchFunc}
                 language={lang}
+                placeholder={searchPlaceholder}
               />
             </RefCoreTab>
             {
