@@ -38,7 +38,7 @@ const SearchPanelItem = (props) => {
   const { form, ...others } = props;
   let { getFieldProps } = form;
   return (
-    <Col md={4} xs={12} sm={12}>
+    <Col style={{width: '33.33%'}}>
       <div className="formItemCustomed">
         <span style={{marginRight: 6}}>{others.text}</span>
         <div className="ref-search-panel-search-item">
