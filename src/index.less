@@ -1,48 +1,70 @@
 
 //特定的样式
-@import './theme-red.less';
 @import './components/RefMultipleTableBaseUI.less';
 @import './components/RefSearchPanel.less';
 .ref-multiple-table.ref-core-modal{
-    .u-input-group-btn{
-        line-height: 32px;
-        color: #757575;
-     }
-     .u-radio-group{
-         display: block!important;
-     }
-     & .u-search-header{
+    // .wui-input-group-btn{
+    //     line-height: 32px;
+    //     color: #757575;
+    //  }
+    //  .wui-radio-group{
+    //      display: block!important;
+    //  }
+     & .ref-search-prefix-header{
         padding:0;
         height: auto;
         
     }
-    & .u-search-header, & .u-search-header-title, & .u-search-header-oper{
+    & .ref-search-prefix-header, & .ref-search-prefix-header-title, & .ref-search-prefix-header-oper{
         height: 44px;
         line-height: 44px;
         font-weight: normal;
     }
-     .u-search-resident{
+     .ref-search-prefix-resident{
          padding:0;
      }
-     .u-search .u-panel .u-panel-body{
-         padding: 0;
-     }
+    //  .ref-search-prefix .wui-panel .wui-panel-body{
+    //      padding: 0;
+    //  }
      .formItemCustomed{
         padding-bottom: 8px;
        // padding-top: 10px;
-        & .u-label,& .u-form-control{
-             font-size:12px;
-        }
+        // & .wui-label,& .wui-form-control{
+        //      font-size:12px;
+        // }
          
      }
-    &.ref-core .u-modal-dialog .u-modal-body{
-        padding: 10px 16px;
-        padding-top:0;
-        text-align: center;
-    }
+    // &.ref-core .wui-modal-dialog .wui-modal-body{
+    //     padding: 10px 16px;
+    //     padding-top:0;
+    //     text-align: center;
+    // }
     .ref-tabs-panel{
         padding:0;
     }
     
 
+}
+.ref-input-wrap.ref-red {
+    ::-webkit-scrollbar {
+        width: 8px !important;
+        height: 8px !important; }
+      
+    ::-webkit-scrollbar-button {
+      display: none; }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #d5d5d5 !important;
+      border-radius: 5px !important; }
+    
+    ::-webkit-scrollbar-thumb {
+      border-radius: 4px !important;
+      background-color: #d5d5d5;
+      position: absolute; }
+    
+    ::-webkit-scrollbar-track {
+      display: none; }
+    
+    ::-webkit-scrollbar-track-piece {
+      display: none; }
 }

@@ -6,14 +6,16 @@ import RefCoreButton from 'ref-core/lib/refs/RefCoreButton';
 import RefCoreTab from 'ref-core/lib/refs/RefCoreTab';
 import RefCoreSearch from 'ref-core/lib/refs/RefCoreSearch';
 import {paginationLocale} from 'ref-core/lib/utils/locale.js'
-import Checkbox from 'bee-checkbox';
-import Modal from 'bee-modal';
-import Pagination from 'bee-pagination';
-import Table from 'bee-table';
-import multiSelect from "bee-table/build/lib/multiSelect.js";
-import Loading from 'bee-loading';
+// import Checkbox from 'bee-checkbox';
+// import Modal from 'bee-modal';
+// import Pagination from 'bee-pagination';
+// import Table from 'bee-table';
+// import multiSelect from "bee-table/build/lib/multiSelect.js";
+// import Loading from 'bee-loading';
+import {Checkbox, Modal, Pagination, Table, Spin as Loading} from '@tinper/next-ui';
 import RefSearchPanel from './RefSearchPanel';
-import { refValParse } from '../utils'
+// import { refValParse } from '../utils'
+const { multiSelect } = Table;
 class RefMultipleTableBase extends Component {
 	columnsData = []//表头数据
 	tableData = []//表格数据
@@ -319,7 +321,7 @@ class RefMultipleTableBase extends Component {
                 next
                 showJump={true}
                 boundaryLinks
-                className={(pageCount > 1 || mustPaginationShow)? '' : `ref-multiple-table-pagination-hide`}
+                className={(pageCount > 1 || mustPaginationShow)? 'ref-multiple-table-pagination-cls' : `ref-multiple-table-pagination-hide ref-multiple-table-pagination-cls`}
                 items={pageCount}
                 maxButtons={5}
                 total={totalElements}

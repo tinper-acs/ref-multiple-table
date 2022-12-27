@@ -12,10 +12,26 @@ const config = webpackMerge(baseConfig, {
     'react-hot-loader/patch',
     path.join(__dirname, '../demo/index.js'),
   ],
+  externals: {
+    '@tinper/next-ui': 'TinperNext',
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'react',
+      root: 'React',
+    },
+    'react-dom': {
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'react-dom',
+      root: 'ReactDOM',
+    },
+  },
   output: {
     filename: '[name].[hash].js',
     path: path.join(__dirname, '../dist'),
-    publicPath: '/'
+    publicPath: '/',
+    libraryTarget: 'umd'
   },
   module: {
     rules: [

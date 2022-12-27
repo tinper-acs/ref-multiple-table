@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import Form from "bee-form";
-import Label from 'bee-label';
-import { Col, Row } from 'bee-layout';
-import SearchPanel from 'bee-search-panel';
-const { FormItem } = Form;
+// import Form from "bee-form";
+// import { Col, Row } from 'bee-layout';
+// import Label from 'bee-label';
+// import SearchPanel from 'bee-search-panel';
+import SearchPanel from 'search-panel-tinper-next';
+import {Form, Col, Row} from '@tinper/next-ui';
+// const { FormItem } = Form;
 const AdvancedContainer = SearchPanel.AdvancedContainer;
 /**
  * 部分不能通过this.props.form.resetFields()清空的组件，需要传reset方法，在reset方法中自行清空
@@ -38,7 +40,7 @@ const SearchPanelItem = (props) => {
   return (
     <Col md={4} xs={12} sm={12}>
       <div className="formItemCustomed">
-        <Label>{others.text}</Label>
+        <span style={{marginRight: 6}}>{others.text}</span>
         <div className="ref-search-panel-search-item">
           {
             React.cloneElement(others.children, {
@@ -83,7 +85,7 @@ class RefSearchPanel extends Component {
       <SearchPanel
         locale={searchPanelLocale}
         className={`ref-search-panel${show ? '' : '-hide'}`}
-        clsPrefix='u-search'
+        clsPrefix='ref-search-prefix'
         showIcon={true}
         onReset={this.onSearchClearClick}
         onSearch={this.onSearchClick}
