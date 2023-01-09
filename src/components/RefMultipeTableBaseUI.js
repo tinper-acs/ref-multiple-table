@@ -227,6 +227,15 @@ class RefMultipleTableBase extends Component {
 			});
 		}
 	}
+  /**
+	 * 添加fieldid
+	 * @record {object} 该行数据
+	 */
+  getFieldid = (str) => {
+		const {modalProps={}} = this.props
+		if (!modalProps.fieldid) return;
+		return `${modalProps.fieldid}_ref_multiple_table_modal_${str}`
+	}
   
   /** end:表格操作*/
   render() {
@@ -261,10 +270,10 @@ class RefMultipleTableBase extends Component {
         enforceFocus={false}
         {...modalProps}
       >
-          <Modal.Header closeButton={true}>
-            <Modal.Title > {title}</Modal.Title>
+          <Modal.Header closeButton={true} fieldid={this.getFieldid('header')}>
+            <Modal.Title fieldid={this.getFieldid('title')}> {title}</Modal.Title>
           </Modal.Header >
-          <Modal.Body ref={(ref)=>this.modalRef = ref}>
+          <Modal.Body ref={(ref)=>this.modalRef = ref} fieldid={this.getFieldid('body')}>
              <Loading container={this.modalRef} show={showLoading} />
             {
               //按字段查询
@@ -295,6 +304,7 @@ class RefMultipleTableBase extends Component {
 								onChange={_this.props.miniSearchFunc}
                 language={lang}
                 placeholder={searchPlaceholder}
+                fieldid={modalProps.fieldid}
               />
             </RefCoreTab>
             {
@@ -335,13 +345,14 @@ class RefMultipleTableBase extends Component {
             }
 
           </Modal.Body>
-          <Modal.Footer className={'ref-core-modal-footer '}>
+          <Modal.Footer className={'ref-core-modal-footer '} fieldid={this.getFieldid('footer')}>
             <RefCoreButton
               language={lang}
               buttons={buttons}
               emptyBut={emptyBut}
               onClickBtn={_this.onClickBtn}
               footerBtnDom={footerBtnDom}
+              fieldid={modalProps.fieldid}
             />
           </Modal.Footer>
       </Modal>

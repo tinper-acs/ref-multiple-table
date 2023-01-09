@@ -202,6 +202,16 @@ class Demo2 extends Component {
       handlePagination: this.handlePagination,
       onSave: this.onSave,
       onCancel: this.onCancel,
+      fieldid: 'demo2',
+      modalProps: {
+        fieldid: 'demo2_modal'
+      },
+      tableProps: {
+        fieldid: 'demo2_table'
+      },
+      paginationProps: {
+        fieldid: 'demo2_pagination'
+      }
     });
     return (
       <div className="demoPadding">
