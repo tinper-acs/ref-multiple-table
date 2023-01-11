@@ -1,6 +1,6 @@
 {
   "name": "ref-multiple-table",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -107,7 +107,7 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "ref-core": "^2.0.0",
+    "ref-core": "^2.0.3",
     "search-panel-tinper-next": "^1.0.0"
   }
 }
