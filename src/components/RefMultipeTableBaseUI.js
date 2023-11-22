@@ -89,6 +89,7 @@ class RefMultipleTableBase extends Component {
   };
   /**end:按钮操作 */
   onSelectTabItem = (a, state) => {
+    let {onSelectTabItem} = this.props
 		if(state === 'selecting'){
 			// this.pageCount = Math.ceil(this.totalElements / this.pageSize);
 			this.setState({
@@ -100,6 +101,7 @@ class RefMultipleTableBase extends Component {
 				tableIsSelecting: false,//不展示已选择列表
 			});
 		}
+    onSelectTabItem && onSelectTabItem(a, state)
 	}
   /** start:表格操作 */
   /**
